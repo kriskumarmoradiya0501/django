@@ -1,0 +1,51 @@
+<h2>Student Form</h2>
+
+<form method="POST">
+    {% csrf_token %}
+
+    Name: {{ form.name }} <br><br>
+    Age: {{ form.age }} <br><br>
+
+    Gender: {{ form.gender }} <br><br>
+
+    Hobbies: {{ form.hobbies }} <br><br>
+
+    Language: {{ form.language }} <br><br>
+
+    Gujarati Marks: {{ form.gujarati }} <br><br>
+    English Marks: {{ form.english }} <br><br>
+
+    <button type="submit">Save</button>
+</form>
+
+<h2>Student Data</h2>
+
+<table border="1">
+<tr>
+    <th>Name</th>
+    <th>Age</th>
+    <th>Gender</th>
+    <th>Hobbies</th>
+    <th>Language</th>
+    <th>Gujarati</th>
+    <th>English</th>
+    <th>Percentage</th>
+</tr>
+
+{% for i, per in result %}
+<tr>
+    <td>{{ i.name }}</td>
+    <td>{{ i.age }}</td>
+    <td>{{ i.gender }}</td>
+    <td>{{ i.hobbies }}</td>
+    <td>{{ i.language }}</td>
+    <td>{{ i.gujarati }}</td>
+    <td>{{ i.english }}</td>
+    <td>{{ per }}%</td>
+    <td>
+        <a href="/update/{{ i.id }}">Edit</a>
+        <a href="/delete/{{ i.id }}">Delete</a>
+    </td>
+</tr>
+{% endfor %}
+</table>
