@@ -1,0 +1,17 @@
+<h1>Movies</h1>
+
+<a href="/add-movie/">Add Movie</a>
+
+<hr>
+
+{% for movie in movies %}
+
+<h2>{{ movie.title }}</h2>
+
+<p>{{ movie.category }}</p>
+
+<a href="/movie/{{ movie.id }}/">View Details</a>
+
+<hr>
+
+{% endfor %}

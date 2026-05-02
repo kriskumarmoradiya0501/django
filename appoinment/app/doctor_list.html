@@ -1,0 +1,19 @@
+<h1>Doctors</h1>
+
+<a href="/add-doctor/">Add Doctor</a>
+
+<hr>
+
+{% for doctor in doctors %}
+
+<h3>{{ doctor.name }}</h3>
+
+<p>{{ doctor.specialization }}</p>
+
+<a href="/doctor/{{ doctor.id }}/">View</a>
+
+<a href="/book/{{ doctor.id }}/">Book Appointment</a>
+
+<hr>
+
+{% endfor %}

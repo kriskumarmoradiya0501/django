@@ -1,0 +1,13 @@
+<h1>{{ doctor.name }}</h1>
+
+<p>{{ doctor.specialization }}</p>
+
+<p>{{ doctor.bio }}</p>
+
+<h2>Appointments</h2>
+
+{% for appointment in appointments %}
+
+<p>{{ appointment.patient_name }}</p>
+
+{% endfor %}
